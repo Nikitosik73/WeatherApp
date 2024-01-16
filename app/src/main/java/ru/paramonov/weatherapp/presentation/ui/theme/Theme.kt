@@ -1,4 +1,4 @@
-package ru.paramonov.weatherapp.ui.theme
+package ru.paramonov.weatherapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
