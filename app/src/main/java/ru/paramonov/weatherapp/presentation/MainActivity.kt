@@ -1,9 +1,9 @@
-package ru.paramonov.weatherapp
+package ru.paramonov.weatherapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import ru.paramonov.weatherapp.ui.theme.WeatherAppTheme
+import ru.paramonov.weatherapp.presentation.ui.theme.WeatherAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package ru.paramonov.weatherapp.ui.theme
+package ru.paramonov.weatherapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
