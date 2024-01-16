@@ -1,13 +1,21 @@
 [versions]
 agp = "8.2.1"
-kotlin = "1.9.0"
+kotlin = "1.9.21"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.2"
-compose-bom = "2023.08.00"
+compose-bom = "2023.10.01"
+mvikotlinVersion = "3.2.1"
+decomposeVersion = "2.1.2"
+roomVersion = "2.6.1"
+kspVersion = "1.9.22-1.0.16"
+daggerVersion = "2.48.1"
+retrofitVersion = "2.9.0"
+okHttpClientVersion = "4.10.0"
+glideVersion = "1.0.0-beta01"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -24,8 +32,23 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+icons = { group = "androidx.compose.material", name = "material-icons-extended" }
+mvikotlin-core = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mvikotlinVersion" }
+mvikotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mvikotlinVersion" }
+mvikotlin-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mvikotlinVersion" }
+decompose-core = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decomposeVersion" }
+decompose-compose = { group = "com.arkivanov.decompose", name = "extensions-compose-jetpack", version.ref = "decomposeVersion" }
+room-core = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+dagger-core = { group = "com.google.dagger", name = "dagger", version.ref = "daggerVersion" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "daggerVersion" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
+retrofit-convertor = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
+okHttpClient-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpClientVersion" }
+glide-compose = { group = "com.github.bumptech.glide", name = "compose", version.ref = "glideVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
