@@ -1,9 +1,10 @@
-package ru.paramonov.weatherapp.presentation.screens.search.store
+package ru.paramonov.weatherapp.presentation.screens.search.store.storefactory
 
 import com.arkivanov.mvikotlin.core.store.Reducer
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
+import ru.paramonov.weatherapp.presentation.screens.search.store.SearchStore
 
 class SearchStoreFactory(
     private val storeFactory: StoreFactory
@@ -14,7 +15,7 @@ class SearchStoreFactory(
                 name = "SearchStore",
                 initialState = SearchStore.State(Unit),
                 reducer = ReducerImpl,
-                executorFactory = ::ExecutorImpl
+                executorFactory = SearchStoreFactory::ExecutorImpl
             ) {}
 
     private sealed interface Action {
