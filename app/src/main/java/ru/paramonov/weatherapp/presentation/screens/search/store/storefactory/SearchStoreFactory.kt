@@ -15,7 +15,7 @@ class SearchStoreFactory(
                 name = "SearchStore",
                 initialState = SearchStore.State(Unit),
                 reducer = ReducerImpl,
-                executorFactory = SearchStoreFactory::ExecutorImpl
+                executorFactory = ::ExecutorImpl
             ) {}
 
     private sealed interface Action {
