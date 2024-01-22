@@ -17,7 +17,7 @@ fun ForecastWeatherResponseDto.toEntity() = Forecast(
         Weather(
             temperatureC = weatherDay.temperatureC,
             conditionText = weatherDay.conditionWeather.text,
-            conditionUrl = weatherDay.conditionWeather.iconUrl.toCorrectImageUrl(),
+            conditionImageUrl = weatherDay.conditionWeather.iconUrl.toCorrectImageUrl(),
             date = dayDto.date.toCalendar()
         )
     }
@@ -26,7 +26,7 @@ fun ForecastWeatherResponseDto.toEntity() = Forecast(
 fun WeatherDto.toEntity() = Weather(
     temperatureC = temperatureC,
     conditionText = conditionWeather.text,
-    conditionUrl = conditionWeather.iconUrl.toCorrectImageUrl(),
+    conditionImageUrl = conditionWeather.iconUrl.toCorrectImageUrl(),
     date = date.toCalendar()
 )
 

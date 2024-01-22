@@ -6,12 +6,14 @@ import dagger.Component
 import ru.paramonov.weatherapp.di.annotation.ApplicationScope
 import ru.paramonov.weatherapp.di.module.DataModule
 import ru.paramonov.weatherapp.di.module.NetworkModule
+import ru.paramonov.weatherapp.di.module.PresentationModule
 
 @ApplicationScope
 @Component(
     modules = [
         DataModule::class,
-        NetworkModule::class
+        NetworkModule::class,
+        PresentationModule::class
     ]
 )
 interface ApplicationComponent {

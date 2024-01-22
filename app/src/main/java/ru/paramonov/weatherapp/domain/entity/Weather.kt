@@ -5,6 +5,6 @@ import java.util.Calendar
 data class Weather(
     val temperatureC: Float,
     val conditionText: String,
-    val conditionUrl: String,
+    val conditionImageUrl: String,
     val date: Calendar
 )
