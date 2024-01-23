@@ -30,7 +30,7 @@ interface FavoriteStore : Store<FavoriteStore.Intent, FavoriteStore.State, Favor
 
         data object ClickToSearch : Intent
 
-        data object ClickToFavorite : Intent
+        data object ClickAddToFavorite : Intent
 
         data class CityItemClicked(val city: City) : Intent
     }
@@ -39,7 +39,7 @@ interface FavoriteStore : Store<FavoriteStore.Intent, FavoriteStore.State, Favor
 
         data object ClickToSearch : Label
 
-        data object ClickToFavorite : Label
+        data object ClickAddToFavorite : Label
 
         data class CityItemClicked(val city: City) : Label
     }
