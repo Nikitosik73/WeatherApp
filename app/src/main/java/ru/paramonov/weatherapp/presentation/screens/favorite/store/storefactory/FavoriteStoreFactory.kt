@@ -94,8 +94,8 @@ class FavoriteStoreFactory @Inject constructor(
                     publish(label = FavoriteStore.Label.CityItemClicked(city = intent.city))
                 }
 
-                FavoriteStore.Intent.ClickToFavorite -> {
-                    publish(label = FavoriteStore.Label.ClickToFavorite)
+                FavoriteStore.Intent.ClickAddToFavorite -> {
+                    publish(label = FavoriteStore.Label.ClickAddToFavorite)
                 }
 
                 FavoriteStore.Intent.ClickToSearch -> {

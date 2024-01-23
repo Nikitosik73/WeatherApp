@@ -33,7 +33,7 @@ class DetailsStoreFactory @Inject constructor(
             ),
             reducer = ReducerImpl,
             executorFactory = ::ExecutorImpl,
-            bootstrapper = BootstrapperImpl(city = )
+            bootstrapper = BootstrapperImpl(city = city)
         ) {}
 
     private sealed interface Action {
