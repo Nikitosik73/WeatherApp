@@ -13,8 +13,3 @@ class WeatherApplication : Application() {
             .create(context = this)
     }
 }
-
-@Composable
-fun getApplicationComponent(): ApplicationComponent {
-    return (LocalContext.current.applicationContext as WeatherApplication).component
-}

@@ -10,9 +10,9 @@ import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import kotlinx.parcelize.Parcelize
 import ru.paramonov.weatherapp.domain.entity.City
-import ru.paramonov.weatherapp.presentation.screens.details.component.DetailsComponent
 import ru.paramonov.weatherapp.presentation.screens.details.component.componentdefault.DefaultDetailsComponent
 import ru.paramonov.weatherapp.presentation.screens.favorite.component.componentdefault.DefaultFavoriteComponent
 import ru.paramonov.weatherapp.presentation.screens.root.component.RootComponent
@@ -20,7 +20,7 @@ import ru.paramonov.weatherapp.presentation.screens.search.OpenReason
 import ru.paramonov.weatherapp.presentation.screens.search.component.componentdefault.DefaultSearchComponent
 import javax.inject.Inject
 
-class DefaultRootComponent @Inject constructor(
+class DefaultRootComponent @AssistedInject constructor(
     private val detailsComponentFactory: DefaultDetailsComponent.Factory,
     private val favoriteComponentFactory: DefaultFavoriteComponent.Factory,
     private val searchComponentFactory: DefaultSearchComponent.Factory,

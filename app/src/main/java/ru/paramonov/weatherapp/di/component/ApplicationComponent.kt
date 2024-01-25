@@ -7,6 +7,7 @@ import ru.paramonov.weatherapp.di.annotation.ApplicationScope
 import ru.paramonov.weatherapp.di.module.DataModule
 import ru.paramonov.weatherapp.di.module.NetworkModule
 import ru.paramonov.weatherapp.di.module.PresentationModule
+import ru.paramonov.weatherapp.presentation.MainActivity
 
 @ApplicationScope
 @Component(
@@ -17,6 +18,8 @@ import ru.paramonov.weatherapp.di.module.PresentationModule
     ]
 )
 interface ApplicationComponent {
+
+    fun inject(activity: MainActivity)
 
     @Component.Factory
     interface Factory {
