@@ -5,6 +5,7 @@ import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineBootstrapper
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import ru.paramonov.weatherapp.domain.entity.City
@@ -76,8 +77,7 @@ class FavoriteStoreFactory @Inject constructor(
                     cities.forEach { city ->
                         scope.launch {
                             loadWeatherForCity(
-                                city = city,
-                                scope = scope
+                                city = city
                             )
                         }
                     }
@@ -104,12 +104,11 @@ class FavoriteStoreFactory @Inject constructor(
             }
         }
 
-        private fun loadWeatherForCity(
-            city: City,
-            scope: CoroutineScope
+        private suspend fun loadWeatherForCity(
+            city: City
         ) {
-            scope.launch {
-                dispatch(message = Message.WeatherIsLoading(cityId = city.id))
+            dispatch(message = Message.WeatherIsLoading(cityId = city.id))
+            try {
                 val weather = getCurrentWeatherUseCase(cityId = city.id)
                 dispatch(
                     message = Message.WeatherIsLoaded(
@@ -118,10 +117,8 @@ class FavoriteStoreFactory @Inject constructor(
                         conditionImageUrl = weather.conditionImageUrl
                     )
                 )
-            }.invokeOnCompletion { cause: Throwable? ->
-                cause?.let {
-                    dispatch(message = Message.WeatherLoadedError(cityId = city.id))
-                }
+            } catch (e: Exception) {
+                dispatch(message = Message.WeatherLoadedError(cityId = city.id))
             }
         }
     }
